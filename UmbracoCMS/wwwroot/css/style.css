@@ -15,3 +15,7 @@ body {
     color: var(--color-main);
     font-weight: 700;
 }
+
+.current a {
+    color: var(--color-secondary);
+}
