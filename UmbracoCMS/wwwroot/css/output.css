@@ -28,6 +28,7 @@
     --color-main: #4F5955;
     --color-secondary: #D9C3A9;
     --color-neutral: #ffffff;
+    --color-white-100: #f7f7f7;
     --color-main-light: #606966;
     --font-poppins: "poppins", sans-serif;
   }
@@ -199,6 +200,24 @@
   .z-\[999\] {
     z-index: 999;
   }
+  .container {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 80rem;
+    }
+    @media (width >= 96rem) {
+      max-width: 96rem;
+    }
+  }
   .-mx-2 {
     margin-inline: calc(var(--spacing) * -2);
   }
@@ -207,6 +226,9 @@
   }
   .mt-6 {
     margin-top: calc(var(--spacing) * 6);
+  }
+  .ml-1 {
+    margin-left: calc(var(--spacing) * 1);
   }
   .block {
     display: block;
@@ -271,6 +293,9 @@
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
   }
@@ -319,8 +344,17 @@
   .bg-neutral {
     background-color: var(--color-neutral);
   }
-  .bg-white {
-    background-color: var(--color-white);
+  .bg-white-100 {
+    background-color: var(--color-white-100);
+  }
+  .\[background-image\:url\(\'\/Images\/Rectangle-left\.svg\'\)\,url\(\'\/Images\/Rectangle-right\.svg\'\)\] {
+    background-image: url('/Images/Rectangle-left.svg'),url('/Images/Rectangle-right.svg');
+  }
+  .\[background-position\:left_bottom\,top_right\] {
+    background-position: left bottom,top right;
+  }
+  .bg-no-repeat {
+    background-repeat: no-repeat;
   }
   .object-cover {
     object-fit: cover;
@@ -349,17 +383,26 @@
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
   }
+  .py-16 {
+    padding-block: calc(var(--spacing) * 16);
+  }
   .py-\[4rem\] {
     padding-block: 4rem;
   }
   .py-\[7rem\] {
     padding-block: 7rem;
   }
+  .pt-3 {
+    padding-top: calc(var(--spacing) * 3);
+  }
   .pt-5 {
     padding-top: calc(var(--spacing) * 5);
   }
   .pb-5 {
     padding-bottom: calc(var(--spacing) * 5);
+  }
+  .text-center {
+    text-align: center;
   }
   .text-2xl {
     font-size: var(--text-2xl);
@@ -384,8 +427,14 @@
   .text-\[\.875rem\] {
     font-size: .875rem;
   }
+  .text-\[2\.5rem\] {
+    font-size: 2.5rem;
+  }
   .text-\[4\.5rem\] {
     font-size: 4.5rem;
+  }
+  .text-\[10px\] {
+    font-size: 10px;
   }
   .leading-none {
     --tw-leading: 1;
