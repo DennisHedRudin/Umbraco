@@ -21,6 +21,7 @@
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
+    --font-weight-normal: 400;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --default-font-family: var(--font-sans);
@@ -30,6 +31,8 @@
     --color-neutral: #ffffff;
     --color-white-100: #f7f7f7;
     --color-main-light: #606966;
+    --color-body-text: #535656;
+    --color-border-gray: #EAEAEA;
     --font-poppins: "poppins", sans-serif;
   }
 }
@@ -254,11 +257,17 @@
   .w-1\/4 {
     width: calc(1/4 * 100%);
   }
+  .w-3\/12 {
+    width: calc(3/12 * 100%);
+  }
   .w-6\/12 {
     width: calc(6/12 * 100%);
   }
   .w-full {
     width: 100%;
+  }
+  .w-px {
+    width: 1px;
   }
   .max-w-7xl {
     max-width: var(--container-7xl);
@@ -337,6 +346,9 @@
   }
   .bg-\[\@sectionColor\] {
     background-color: @sectionColor;
+  }
+  .bg-border-gray {
+    background-color: var(--color-border-gray);
   }
   .bg-main {
     background-color: var(--color-main);
@@ -427,6 +439,12 @@
   .text-\[\.875rem\] {
     font-size: .875rem;
   }
+  .text-\[0\.875rem\] {
+    font-size: 0.875rem;
+  }
+  .text-\[1\.375rem\] {
+    font-size: 1.375rem;
+  }
   .text-\[2\.5rem\] {
     font-size: 2.5rem;
   }
@@ -444,9 +462,16 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
+  }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
+  }
+  .text-body-text {
+    color: var(--color-body-text);
   }
   .text-gray-600 {
     color: var(--color-gray-600);
