@@ -9,12 +9,6 @@
 @inject IDocumentNavigationQueryService DocumentNavigationQueryService
 @inject IPublishedValueFallback PublishedValueFallback
 @inject IPublishedUrlProvider PublishedUrlProvider
-@*
-    This snippet displays a list of links of the pages immediately under the top-most page in the content tree.
-    This is the home page for a standard website.
-    It also highlights the current active page/section in the navigation with the CSS class "current".
-*@
-
 
 
 
@@ -51,14 +45,14 @@
 				@foreach (var item in selection)
 				{
 					<li class="@(item.IsAncestorOrSelf(Model) ? "current" : null)">
-						<a class="font-bold text-[var(--color-main)] hover:text-[var(--color-secondary)] trasition-colors" href="@item.Url(PublishedUrlProvider)">@item.Name</a>
+						<a class="font-bold text-main hover:text-secondary trasition-colors" href="@item.Url(PublishedUrlProvider)">@item.Name</a>
 					</li>
 				}
 			</ul>
 		}
 
 		<div class="flex items-center">
-			<i class="fa-solid fa-magnifying-glass text-lg text-[var(--color-main)]"></i>
+			<i class="fa-solid fa-magnifying-glass text-lg text-main"></i>
 		</div>
 
 	</nav>
