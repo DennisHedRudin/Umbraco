@@ -21,6 +21,8 @@
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --default-font-family: var(--font-sans);
@@ -30,7 +32,15 @@
     --color-neutral: #ffffff;
     --color-white-100: #f7f7f7;
     --color-main-light: #606966;
+    --color-body-text: #535656;
+    --color-body-text-100: #999999;
+    --color-border-gray: #EAEAEA;
     --font-poppins: "poppins", sans-serif;
+    --text-rte-xl: 4.375rem;
+    --text-rte-lg: 2.5rem;
+    --text-rte-md: 1.25rem;
+    --text-rte-sm: 1rem;
+    --text-rte-xs: 0.875rem;
   }
 }
 @layer base {
@@ -254,11 +264,20 @@
   .w-1\/4 {
     width: calc(1/4 * 100%);
   }
+  .w-3\/12 {
+    width: calc(3/12 * 100%);
+  }
   .w-6\/12 {
     width: calc(6/12 * 100%);
   }
+  .w-8\/12 {
+    width: calc(8/12 * 100%);
+  }
   .w-full {
     width: 100%;
+  }
+  .w-px {
+    width: 1px;
   }
   .max-w-7xl {
     max-width: var(--container-7xl);
@@ -337,6 +356,9 @@
   }
   .bg-\[\@sectionColor\] {
     background-color: @sectionColor;
+  }
+  .bg-border-gray {
+    background-color: var(--color-border-gray);
   }
   .bg-main {
     background-color: var(--color-main);
@@ -427,6 +449,12 @@
   .text-\[\.875rem\] {
     font-size: .875rem;
   }
+  .text-\[0\.875rem\] {
+    font-size: 0.875rem;
+  }
+  .text-\[1\.375rem\] {
+    font-size: 1.375rem;
+  }
   .text-\[2\.5rem\] {
     font-size: 2.5rem;
   }
@@ -436,6 +464,21 @@
   .text-\[10px\] {
     font-size: 10px;
   }
+  .text-rte-lg {
+    font-size: var(--text-rte-lg);
+  }
+  .text-rte-md {
+    font-size: var(--text-rte-md);
+  }
+  .text-rte-sm {
+    font-size: var(--text-rte-sm);
+  }
+  .text-rte-xl {
+    font-size: var(--text-rte-xl);
+  }
+  .text-rte-xs {
+    font-size: var(--text-rte-xs);
+  }
   .leading-none {
     --tw-leading: 1;
     line-height: 1;
@@ -444,9 +487,23 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
+  .font-light {
+    --tw-font-weight: var(--font-weight-light);
+    font-weight: var(--font-weight-light);
+  }
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
+  }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
+  }
+  .text-body-text {
+    color: var(--color-body-text);
+  }
+  .text-body-text-100 {
+    color: var(--color-body-text-100);
   }
   .text-gray-600 {
     color: var(--color-gray-600);
@@ -499,6 +556,27 @@ body {
 }
 .current a {
   color: var(--color-secondary);
+}
+.rte-ul {
+  margin-top: calc(var(--spacing) * 3);
+  list-style-type: disc;
+  padding-left: calc(var(--spacing) * 5);
+}
+.rte-ul li {
+  margin-bottom: calc(var(--spacing) * 3);
+  font-size: var(--text-rte-xs);
+  color: var(--color-body-text);
+}
+.rte-ul li::marker {
+  color: var(--color-secondary);
+}
+.rte p {
+  margin-bottom: calc(var(--spacing) * 3);
+}
+img {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
 }
 @property --tw-rotate-x {
   syntax: "*";
