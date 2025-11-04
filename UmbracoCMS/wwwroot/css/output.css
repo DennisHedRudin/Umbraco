@@ -33,6 +33,7 @@
     --color-white-100: #f7f7f7;
     --color-main-light: #606966;
     --color-body-text: #535656;
+    --color-body-text-100: #999999;
     --color-border-gray: #EAEAEA;
     --font-poppins: "poppins", sans-serif;
     --text-rte-xl: 4.375rem;
@@ -501,6 +502,9 @@
   .text-body-text {
     color: var(--color-body-text);
   }
+  .text-body-text-100 {
+    color: var(--color-body-text-100);
+  }
   .text-gray-600 {
     color: var(--color-gray-600);
   }
@@ -552,6 +556,27 @@ body {
 }
 .current a {
   color: var(--color-secondary);
+}
+.rte-ul {
+  margin-top: calc(var(--spacing) * 3);
+  list-style-type: disc;
+  padding-left: calc(var(--spacing) * 5);
+}
+.rte-ul li {
+  margin-bottom: calc(var(--spacing) * 3);
+  font-size: var(--text-rte-xs);
+  color: var(--color-body-text);
+}
+.rte-ul li::marker {
+  color: var(--color-secondary);
+}
+.rte p {
+  margin-bottom: calc(var(--spacing) * 3);
+}
+img {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
 }
 @property --tw-rotate-x {
   syntax: "*";

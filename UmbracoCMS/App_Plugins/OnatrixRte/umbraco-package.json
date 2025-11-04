@@ -146,15 +146,78 @@
                                         "tag": "p",
                                         "class": "text-rte-xs font-bold"
                                     }
-                                    
+
                                 }
                             ]
+                        }
+
+                    ]
+                },
+
+                {
+                    "label": "Bullets",
+                    "data": {
+                        "tag": "ul",
+                        "class": "rte-ul"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "tiptapToolbarExtension",
+            "kind": "styleMenu",
+            "alias": "Onatrix.Tiptap.BrandColors",
+            "name": "Onatrix Brand Colors",
+            "meta": {
+                "alias": "OnatrixBrandColors",                
+                "label": "Onatrix Color"
+            },
+            "items": [
+                {
+                    "label": "Paragraphs",
+                    "items": [
+                        {
+                            "label": "Primary",
+                            "data": {
+                                "tag": "span",
+                                "class": "text-main"
+                            },
+                            "appearance": { "style": "background-color:#4F5955; color:#fff; padding:5px" }
+
+                        },
+                        {
+                            "label": "Secondary",
+                            "data": {
+                                "tag": "span",
+                                "class": "text-secondary"
+                            },
+                            "appearance": { "style": "background-color:#D9C3A9; color:#fff; padding:5px" }
+
+                        },
+                        {
+                            "label": "Body",
+                            "data": {
+                                "tag": "span",
+                                "class": "text-body-text"
+                            },
+                            "appearance": { "style": "background-color:#535656; color:#fff; padding:5px" }
+
+                        },
+                        {
+                            "label": "Body-Light",
+                            "data": {
+                                "tag": "span",
+                                "class": "text-body-text-100"
+                            },
+                            "appearance": { "style": "background-color:#999999; color:#fff; padding:5px" }
+
                         }
 
                     ]
                 }
             ]
         }
+
     ]
 }
         
