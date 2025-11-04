@@ -1,0 +1,3 @@
+﻿.form-btn {
+    @apply w-full background-color-accent text-main text-center font-bold rounded-md cursor-pointer select-none py-3 px-12 text-[1.125rem]; 
+}
