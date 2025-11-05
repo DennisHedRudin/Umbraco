@@ -1,0 +1,15 @@
+﻿.form-btn {
+    @apply w-full bg-accent text-main text-center font-bold rounded-md cursor-pointer select-none py-3 px-12 text-[1.125rem]; 
+}
+
+.form-btn:hover {
+    @apply bg-main text-accent;
+}
+
+.input-validation-error {
+    @apply border-red-500 focus:ring-1 focus:ring-red-500;
+}
+
+.field-validation-error {
+    @apply mt-1 block text-sm text-red-600;
+}
