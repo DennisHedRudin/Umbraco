@@ -17,6 +17,7 @@
     --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-600: oklch(44.6% 0.03 256.802);
+    --color-black: #000;
     --color-white: #F2EDDC;
     --spacing: 0.25rem;
     --container-7xl: 80rem;
@@ -436,6 +437,18 @@
   .gap-16 {
     gap: calc(var(--spacing) * 16);
   }
+  .gap-\[0-5rem\] {
+    gap: 0-5rem;
+  }
+  .gap-\[0\.3rem\] {
+    gap: 0.3rem;
+  }
+  .gap-\[0\.4rem\] {
+    gap: 0.4rem;
+  }
+  .gap-\[0\.5rem\] {
+    gap: 0.5rem;
+  }
   .gap-\[1rem\] {
     gap: 1rem;
   }
@@ -489,6 +502,9 @@
   }
   .bg-\[var\(--color-main\)\] {
     background-color: var(--color-main);
+  }
+  .bg-black {
+    background-color: var(--color-black);
   }
   .bg-border-gray {
     background-color: var(--color-border-gray);
@@ -559,8 +575,14 @@
   .py-28 {
     padding-block: calc(var(--spacing) * 28);
   }
+  .py-\[0\.7rem\] {
+    padding-block: 0.7rem;
+  }
   .py-\[1\.5rem\] {
     padding-block: 1.5rem;
+  }
+  .py-\[1rem\] {
+    padding-block: 1rem;
   }
   .py-\[4rem\] {
     padding-block: 4rem;

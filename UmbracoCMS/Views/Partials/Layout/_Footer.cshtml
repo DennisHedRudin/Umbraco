@@ -1,0 +1,15 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+	var rootContent = Umbraco.ContentAtRoot();
+	var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
+
+	var contactTemplate = siteSettings?.TemplateName ?? "";
+}
+
+<div class="bg-black py-[0.7rem]">
+	<div class="max-w-7xl mx-auto flex flex-row gap-[0.4rem]">
+		<p class="text-main text-sm">© Onatrix. All Rights Reserved. Credits to</p> 
+		<p class="text-secondary text-sm">@contactTemplate</p>
+	</div>
+</div>
