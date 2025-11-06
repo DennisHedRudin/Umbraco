@@ -1,5 +1,6 @@
 ﻿@import "tailwindcss";
 @import "./forms.css";
+@import "./rte.css";
 
 @theme {
     --color-main: #4F5955;
@@ -16,7 +17,7 @@
     --color-notel: #9C9EA6;
     --color-border-gray: #EAEAEA;
     --color-border-400: #C7C8C9;
-
+     
     --font-poppins: "poppins", sans-serif;
 
     --text-rte-xl: 4.375rem;
@@ -31,30 +32,10 @@ body {
     @apply font-poppins;
 }
 
-.rte h3 {
-    @apply text-[2.5rem] text-main font-bold;
-}
+
     
 
 .current a {
     @apply text-secondary;
 }
 
-.rte-ul {
-    @apply list-disc pl-5 mt-3;
-}
-
-.rte-ul li {
-    @apply text-rte-xs text-body-text mb-3;
-}
-
-.rte-ul li::marker {
-    @apply text-secondary;
-}
-.rte p {
-    @apply mb-3;
-}
-
-img {
-    @apply w-full h-auto object-cover;
-}
