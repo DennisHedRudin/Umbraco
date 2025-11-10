@@ -12,7 +12,7 @@
     var items = servicePage?.Children<ServiceDetail>()?.OrderByDescending(x => x.CreateDate).ToList() ?? [];
 }
 
-<section class="bg-[@sectionColor] py-[4rem] px-70">
+<section class="py-[4rem] px-70" style="bg-[@sectionColor]">
 
     <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
         <div class="flex flex-col gap-2 items-center">
