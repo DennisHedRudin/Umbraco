@@ -1,0 +1,42 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.PartnersSection)Model.Content;   
+}
+
+<section class="mt-[4rem]">
+    <div class="max-w-7xl mx-auto flex gap-[4rem] items-center justify-center">
+       
+        @if (content.Partners != null)
+        {
+            <img src="@content.Partners.Url()" ></img>
+        }
+
+        @if (content.Partner2 != null)
+        {
+            <img src="@content.Partner2.Url()" class="flex items-center gap-[2rem]"></img>
+        }
+
+        @if (content.Partner3 != null)
+        {
+            <img src="@content.Partner3.Url()" class="flex items-center gap-[2rem]"></img>
+        }
+
+        @if (content.Partner4 != null)
+        {
+            <img src="@content.Partner4.Url()" class="flex items-center gap-[2rem]"></img>
+        }
+
+        @if (content.Partner5 != null)
+        {
+            <img src="@content.Partner5.Url()" class="flex items-center gap-[2rem]"></img>
+        }
+
+        @if (content.Partner6 != null)
+        {
+            <img src="@content.Partner6.Url()" class="flex items-center gap-[2rem]"></img>
+        }
+        
+    </div>
+
+</section>

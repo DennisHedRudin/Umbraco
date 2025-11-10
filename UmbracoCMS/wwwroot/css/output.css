@@ -488,6 +488,9 @@
   .gap-\[3rem\] {
     gap: 3rem;
   }
+  .gap-\[4rem\] {
+    gap: 4rem;
+  }
   .gap-y-5 {
     row-gap: calc(var(--spacing) * 5);
   }
