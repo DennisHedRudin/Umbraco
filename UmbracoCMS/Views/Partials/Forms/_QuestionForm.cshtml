@@ -3,14 +3,14 @@
 
 @using (Html.BeginUmbracoForm("HandleQuestionForm", "Form", FormMethod.Post, new { novalidate = "novalidate", id = "questionform" }))
 {
-    <div>
-        <div class="flex ">
-            <div>
+    <div class="flex flex-col gap-[1rem]">
+        <div class="flex gap-[1rem]">
+            <div class="w-full">
                 <label asp-for="Name" class="sr-only"></label>
                 <input asp-for="Name" type="text" placeholder="@Html.DisplayNameFor(x => x.Name)" class="w-full p-3 italic border border-gray-300 focus:ring-2 focus:ring-main focus:outline-none" />
                 <span asp-validation-for="Name"></span>
             </div>
-            <div>
+            <div class="w-full">
                 <label asp-for="Email" class="sr-only"></label>
                 <input asp-for="Email" type="text" placeholder="@Html.DisplayNameFor(x => x.Email)" class="w-full p-3 italic border border-gray-300 focus:ring-2 focus:ring-main focus:outline-none" />
                 <span asp-validation-for="Name"></span>
@@ -19,7 +19,7 @@
         <div>
             <div>
                 <label asp-for="Question" class="sr-only"></label>
-                <input asp-for="Question" type="text" placeholder="@Html.DisplayNameFor(x => x.Question)" class="w-full p-3 italic border border-gray-300 focus:ring-2 focus:ring-main focus:outline-none" />
+                <textarea asp-for="Question" placeholder="@Html.DisplayNameFor(x => x.Question)" class="w-full p-3 italic border border-gray-300 focus:ring-2 focus:ring-main focus:outline-none" ></textarea>
                 <span asp-validation-for="Question"></span>
             </div>
         </div>

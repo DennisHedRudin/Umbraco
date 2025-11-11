@@ -34,4 +34,24 @@ public IActionResult HandleCallbackForm(CallbackFormViewModel model)
 
         return RedirectToCurrentUmbracoPage();
     }
+
+    public IActionResult HandleQuestionForm(QuestionFormViewModel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return CurrentUmbracoPage();
+        }
+
+        var result = _formSubmissions.SaveQuestionRequest(model);
+        if (!result)
+        {
+            TempData["FormError"] = "Something went wrong while submitting your question. Please try again later.";
+            return RedirectToCurrentUmbracoPage();
+        }
+
+        TempData["FormSuccess"] = "Thank you! Your question has been received and we'll get back to you soon.";
+
+        return RedirectToCurrentUmbracoPage();
+
+    }
 }

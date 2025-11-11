@@ -2,16 +2,18 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @using UmbracoCMS.ViewModels
 @{
-    var content = (ContentModels.QuestionSection)Model.Content;   
+    var content = (ContentModels.QuestionSection)Model.Content;
+
+    var FormVM = new QuestionFormViewModel();
 }
 
 <section>
-    <div class="max-w-7xl mx-auto px-4 flex">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col gap-[1rem]">
         <div>
             <h3 class="text-main font-bold text-[28px]">@content.QuestionFormTitle</h3>
         </div>
         <div>
-            <partial name="Partials/Forms/_QuestionForm"/>
+            <partial name="Partials/Forms/_QuestionForm" model="FormVM"/>
 
             @if (TempData["FormSuccess"] != null)
             {
