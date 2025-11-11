@@ -656,6 +656,9 @@
   .pt-5 {
     padding-top: calc(var(--spacing) * 5);
   }
+  .pt-16 {
+    padding-top: calc(var(--spacing) * 16);
+  }
   .pt-\[2rem\] {
     padding-top: 2rem;
   }
@@ -714,6 +717,9 @@
   }
   .text-\[10px\] {
     font-size: 10px;
+  }
+  .text-\[28px\] {
+    font-size: 28px;
   }
   .text-rte-lg {
     font-size: var(--text-rte-lg);
