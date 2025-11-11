@@ -715,6 +715,9 @@
   .text-\[10px\] {
     font-size: 10px;
   }
+  .text-\[28px\] {
+    font-size: 28px;
+  }
   .text-rte-lg {
     font-size: var(--text-rte-lg);
   }
