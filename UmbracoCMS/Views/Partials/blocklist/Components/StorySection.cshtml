@@ -1,0 +1,32 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using UmbracoCMS.ViewModels
+@{
+    var content = (ContentModels.StorySection)Model.Content;   
+}
+
+<section class="">
+    <div class="flex flex-col items-center max-w-7xl mx-auto px-4 [background-image:url('/Images/dot-map.svg')] bg-no-repeat bg-center">
+        <div class="flex flex-col items-center gap-[2rem]">
+            <div >
+                <div class="rte">@Html.Raw(content.StoryTitle)</div>
+            </div>
+            <div class="">
+                <div class="rte">@Html.Raw(content.StoryBody)</div>
+            </div>            
+             @if (content.StoryLink != null)
+                {
+                 <a class="bg-main text-white py-3 px-10 no-underline rounded cursor-pointer font-bold" href="@content.StoryLink.Url">@content.StoryLink.Name</a>
+                }
+
+                @if (content.StoryImage != null)
+                {
+                    <img src="@content.StoryImage.Url()" alt="" class="w-full h-full object-cover mt-[4rem]">
+                }
+
+        </div>      
+            
+       
+
+    </div>
+</section>

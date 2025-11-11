@@ -1,0 +1,68 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using UmbracoCMS.ViewModels
+@{
+    var content = (ContentModels.ContactSection)Model.Content;
+
+    var settings = Model.Settings as ContentModels.ContactSettings;   
+    var sectionColor = settings?.ContactBgColor?.Color ?? "#ffffff";
+
+    var rootContent = Umbraco.ContentAtRoot();
+    var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
+
+    var contactAdress = siteSettings?.ContactAddress ?? "Ingen adress angiven";
+    var contactPhone = siteSettings?.ContactPhone ?? "Inget nummer angivet";    
+    var contactEmail = siteSettings?.ContactEmail ?? "Inge mailadress angivet";
+}
+
+<section class="pt-[3rem]" style="background-color:@sectionColor">
+    <div class="max-w-7xl mx-auto px-4 flex flex-row">
+        <div>
+            @if (content.ContactImage != null)
+            {
+                <img src="@content.ContactImage.Url()" alt="" class="w-full h-full object-cover">
+            }
+            
+
+        </div>
+        <div class="flex flex-col gap-[2rem] p-[4rem]">
+            <div class="rte">@Html.Raw(content.ContactTitle)</div>
+
+                <div class="flex flex-col gap-[3rem]">
+                    <div class="flex flex-col gap-[0.8rem]">
+                        <div class="flex items-center gap-[0.5rem]">
+                            <img src="~/Images/Icon address.svg" alt="Alternate Text" />
+                            <p class="text-rte-xs font-bold text-main">Office location</p>
+                        </div>
+                    <p class="text-rte-xs font-regular text-body-text ml-[1.7rem]">@contactAdress</p>
+                    </div>
+
+                    <div class="flex flex-col gap-[0.8rem]">
+                        <div class="flex items-center gap-[0.5rem]">
+                            <img src="~/Images/Icon email.svg" alt="Alternate Text" />
+                        <p class="text-rte-xs font-bold text-main">Phone number</p>
+                        </div>
+                        <p class="text-rte-xs font-regular text-body-text ml-[1.7rem]">@contactEmail</p>
+                    </div>
+
+                    <div class="flex flex-col gap-[0.8rem]">
+                        <div class="flex items-center gap-[0.5rem]">
+                            <img src="~/Images/Icon phone.svg" alt="Alternate Text" />
+                        <p class="text-rte-xs font-bold text-main">E-mail address</p>
+                        </div>
+                    <p class="text-rte-xs font-regular text-body-text ml-[1.7rem]">@contactPhone</p>
+                    </div>
+                </div>
+
+
+        </div>
+
+       
+
+        
+
+
+
+
+    </div>
+</section>
