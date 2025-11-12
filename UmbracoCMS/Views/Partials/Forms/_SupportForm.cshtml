@@ -4,11 +4,18 @@
 @using (Html.BeginUmbracoForm("HandleSupportForm", "Form", FormMethod.Post, new { novalidate = "novalidate", id = "supportform" }))
 {
  
-    <div class="w-full">
-        <label asp-for="Email" class="sr-only"></label>
-        <input asp-for="Email" type="text" placeholder="@Html.DisplayNameFor(x => x.Email)" class="w-full p-3 italic border border-gray-300 focus:ring-2 focus:ring-main focus:outline-none" />
-        <button type="submit" class="absolute right-3 top-1/2 -translate-y-1/2 text-main hover:text-green-700"><i class="fa-light fa-envelope" style="color: #4f5955;"></i></button>
-        <span asp-validation-for="Email"></span>
+    <div class="relative">
+        <label asp-for="SupportEmail" class="sr-only"></label>
+        <input asp-for="SupportEmail" type="text" placeholder="@Html.DisplayNameFor(x => x.SupportEmail)" class="w-full bg-white-100 p-3 italic text-sm border border-gray-300 focus:ring-2 focus:ring-main focus:outline-none" />
+        <button type="submit" form="supportform" class="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer ">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.2188 4.125H3.78125C2.83201 4.125 2.0625 4.89451 2.0625 5.84375V16.1562C2.0625 17.1055 2.83201 17.875 3.78125 17.875H18.2188C19.168 17.875 19.9375 17.1055 19.9375 16.1562V5.84375C19.9375 4.89451 19.168 4.125 18.2188 4.125Z"
+                      stroke="#4F5955" stroke-width="1.375" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M4.8125 6.875L11 11.6875L17.1875 6.875"
+                      stroke="#4F5955" stroke-width="1.375" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            </button>
+        <span asp-validation-for="SupportEmail"></span>
     </div>
         
 }

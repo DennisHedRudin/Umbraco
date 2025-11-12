@@ -54,7 +54,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.2+8aa9dc8")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("formEmail")]
-		public virtual string FormEmail => this.Value<string>(_publishedValueFallback, "formEmail");
+		[ImplementPropertyType("supportRequestEmail")]
+		public virtual string SupportRequestEmail => this.Value<string>(_publishedValueFallback, "supportRequestEmail");
 	}
 }

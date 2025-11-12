@@ -48,9 +48,35 @@ public class FormSubmissionService(IContentService contentService)
             var request = _contentService.Create(requestName, container, "questionRequest");
 
             request.SetValue("questionRequestName", model.Name);
-            request.SetValue("questionRequestEmail", model.Email);
+            request.SetValue("questionRequestEmail", model.QuestionEmail);
             request.SetValue("questionRequestQuestion", model.Question);
            
+
+            var saveResult = _contentService.Save(request);
+            return saveResult.Success;
+        }
+        catch (Exception ex)
+        {
+            return false;
+        }
+    }
+
+    public bool SaveSupportRequest(SupportFormViewModel model)
+    {
+
+
+        try
+        {
+            var container = _contentService.GetRootContent().FirstOrDefault(x => x.ContentType.Alias == "formSubmissions");
+            if (container == null)
+                return false;
+
+            var requestName = $"{DateTime.Now:yyyy-MM-dd HH:mm} - {model.SupportEmail}";
+            var request = _contentService.Create(requestName, container, "supportRequest");
+            
+            request.SetValue("supportRequestEmail", model.SupportEmail);
+            
+
 
             var saveResult = _contentService.Save(request);
             return saveResult.Success;

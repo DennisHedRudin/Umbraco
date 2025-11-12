@@ -11,9 +11,9 @@
                 <span asp-validation-for="Name"></span>
             </div>
             <div class="w-full">
-                <label asp-for="Email" class="sr-only"></label>
-                <input asp-for="Email" type="text" placeholder="@Html.DisplayNameFor(x => x.Email)" class="w-full p-3 italic border border-gray-300 focus:ring-2 focus:ring-main focus:outline-none" />
-                <span asp-validation-for="Email"></span>
+                <label asp-for="QuestionEmail" class="sr-only"></label>
+                <input asp-for="QuestionEmail" type="text" placeholder="@Html.DisplayNameFor(x => x.QuestionEmail)" class="w-full p-3 italic border border-gray-300 focus:ring-2 focus:ring-main focus:outline-none" />
+                <span asp-validation-for="QuestionEmail"></span>
             </div>
         </div>
         <div>
@@ -25,7 +25,7 @@
         </div>
 
         <div class="pb-[2.5rem]">
-            <button type="submit" class=" bg-main text-white py-3 px-10 no-underline rounded cursor-pointer self-start font-bold">Submit</button>
+            <button type="submit" form="questionform" class=" bg-main text-white py-3 px-10 no-underline rounded cursor-pointer self-start font-bold">Submit</button>
         </div>
     </div>
 	
