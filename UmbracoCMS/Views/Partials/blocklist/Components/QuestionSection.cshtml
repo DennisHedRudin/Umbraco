@@ -4,7 +4,7 @@
 @{
     var content = (ContentModels.QuestionSection)Model.Content;
 
-    var FormVM = new QuestionFormViewModel();
+    var FormQVM = new QuestionFormViewModel();
 }
 
 <section>
@@ -13,18 +13,18 @@
             <h3 class="text-main font-bold text-[28px]">@content.QuestionFormTitle</h3>
         </div>
         <div>
-            <partial name="Partials/Forms/_QuestionForm" model="FormVM"/>
+            <partial name="Partials/Forms/_QuestionForm" model="FormQVM"/>
 
-            @if (TempData["FormSuccess"] != null)
+            @if (TempData["QuestionFormSuccess"] != null)
             {
                 <div class="bg-green-50 text-green-700 p-4 mx-[2rem] mb-4 rounded-md">
-                    @TempData["FormSuccess"]
+                    @TempData["QuestionFormSuccess"]
                 </div>
             }
-            else if (TempData["FormError"] != null)
+            else if (TempData["QuestionFormError"] != null)
             {
                 <div class="bg-red-50 text-red-700 p-4 mx-[2rem] mb-4 rounded-md">
-                    @TempData["FormError"]
+                    @TempData["QuestionFormError"]
                 </div>
             }
         </div>

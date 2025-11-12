@@ -1,0 +1,32 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using UmbracoCMS.ViewModels
+@{
+    var content = (ContentModels.SupportCard)Model.Content;
+
+    var formSVM = new SupportFormViewModel();
+}
+
+
+<div class="flex flex-col gap-[1rem] p-[1.5rem] bg-main mt-[3rem] rounded-md bg-no-repeat
+    [background-image:url('/Images/Mail.svg')]
+     [background-position:bottom_right]" >
+    
+    <h2 class="text-sub text-[22px] font-bold">@content.SupportTitle</h2>
+    <div class="rte">@Html.Raw(content.SupportBody)</div>    
+    
+    <partial name="Partials/Forms/_SupportForm" model="formSVM" />
+    @if (TempData["SupportFormSuccess"] != null)
+    {
+        <div class="bg-green-50 text-green-700 p-4 mx-[2rem] mb-4 rounded-md">
+            @TempData["SupportFormSuccess"]
+        </div>
+    }
+    else if (TempData["SupportFormError"] != null)
+    {
+        <div class="bg-red-50 text-red-700 p-4 mx-[2rem] mb-4 rounded-md">
+            @TempData["SupportFormError"]
+        </div>
+    }
+    
+</div>

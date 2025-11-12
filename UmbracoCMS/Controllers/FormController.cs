@@ -45,11 +45,31 @@ public IActionResult HandleCallbackForm(CallbackFormViewModel model)
         var result = _formSubmissions.SaveQuestionRequest(model);
         if (!result)
         {
-            TempData["FormError"] = "Something went wrong while submitting your question. Please try again later.";
+            TempData["QuestionFormError"] = "Something went wrong while submitting your question. Please try again later.";
             return RedirectToCurrentUmbracoPage();
         }
 
-        TempData["FormSuccess"] = "Thank you! Your question has been received and we'll get back to you soon.";
+        TempData["QuestionFormSuccess"] = "Thank you! Your question has been received and we'll get back to you soon.";
+
+        return RedirectToCurrentUmbracoPage();
+
+    }
+
+    public IActionResult HandleSupportForm(SupportFormViewModel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return CurrentUmbracoPage();
+        }
+
+        var result = _formSubmissions.SaveSupportRequest(model);
+        if (!result)
+        {
+            TempData["SupportFormError"] = "Something went wrong while submitting your email. Please try again later.";
+            return RedirectToCurrentUmbracoPage();
+        }
+
+        TempData["SupportFormSuccess"] = "Thank you! We'll get back to you soon.";
 
         return RedirectToCurrentUmbracoPage();
 
