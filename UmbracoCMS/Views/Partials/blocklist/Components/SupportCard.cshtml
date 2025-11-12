@@ -1,0 +1,19 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using UmbracoCMS.ViewModels
+@{
+    var content = (ContentModels.SupportCard)Model.Content;
+
+    var formVM = new SupportFormViewModel();
+}
+
+
+<div>
+    <div>
+        <h2 class="text-Secondary text-[22px] font-bold">@content.SupportTitle</h2>
+        <p class="rte">@Html.Raw(content.SupportBody)</p>
+    </div>
+    <div>
+        <partial name="Partials/Forms/_SupportForm" model="formVM" />
+    </div>
+</div>

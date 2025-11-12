@@ -1,0 +1,14 @@
+﻿@using UmbracoCMS.ViewModels
+@model SupportFormViewModel
+
+@using (Html.BeginUmbracoForm("HandleSupportForm", "Form", FormMethod.Post, new { novalidate = "novalidate", id = "supportform" }))
+{
+ 
+    <div class="w-full">
+        <label asp-for="Email" class="sr-only"></label>
+        <input asp-for="Email" type="text" placeholder="@Html.DisplayNameFor(x => x.Email)" class="w-full p-3 italic border border-gray-300 focus:ring-2 focus:ring-main focus:outline-none" />
+        <button type="submit" class="absolute right-3 top-1/2 -translate-y-1/2 text-main hover:text-green-700"><i class="fa-light fa-envelope" style="color: #4f5955;"></i></button>
+        <span asp-validation-for="Email"></span>
+    </div>
+        
+}
