@@ -1,0 +1,57 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using UmbracoCMS.ViewModels
+@{
+    var content = (ContentModels.MapSection)Model.Content;
+    var settings = Model.Settings as ContentModels.AboutCallbackSettings;
+
+
+
+    var formVM = new CallbackFormViewModel
+    {
+        Options = settings?.CallbackRequestOptions ?? []
+    };
+}
+
+<section class="bg-cover bg-center bg-no-repeat py-[5rem]"
+         style="background-image: url('@content.MapBgImage?.Url()');">
+    
+
+    <div class="max-w-7xl bg-neutral mx-auto pt-[3rem] translate-y-[200px] shadow-md">
+        <div class=" mx-auto px-4 flex flex-col items-center justify-center gap-10">
+
+            <div class="flex flex-col items-center justify-center max-w-md">
+                <p class="text-secondary font-bold text-rte-xs">@content.MapLabel</p>
+                <h2 class="text-main font-bold text-rte-lg text-center">@content.MapTitle</h2>
+                <div class="rte">
+                    @Html.Raw(content.MapBody)
+                </div>
+            </div>
+
+
+            
+            <div class="w-full px-4">
+                <partial name="Partials/Forms/_MapCallbackForm" model="formVM" />
+            </div>
+            
+
+            @if (TempData["FormSuccess"] != null)
+            {
+                <div class="bg-green-50 text-green-700 p-4 mx-[2rem] mb-4 rounded-md">
+                    @TempData["FormSuccess"]
+                </div>
+            }
+            else if (TempData["FormError"] != null)
+            {
+                <div class="bg-red-50 text-red-700 p-4 mx-[2rem] mb-4 rounded-md">
+                    @TempData["FormError"]
+                </div>
+            }
+
+            
+
+
+        </div>
+    </div>
+    
+</section>

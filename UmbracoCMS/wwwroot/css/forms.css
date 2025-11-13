@@ -2,6 +2,10 @@
     @apply w-full bg-accent text-main text-center font-bold rounded-md cursor-pointer select-none py-3 px-12 text-[1.125rem]; 
 }
 
+.form-btn-green {
+    @apply bg-main text-white py-3 px-10 no-underline rounded cursor-pointer self-start font-bold;
+}
+
 .form-btn:hover {
     @apply bg-main text-accent;
 }
