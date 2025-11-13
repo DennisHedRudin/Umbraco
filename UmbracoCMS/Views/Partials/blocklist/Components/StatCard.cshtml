@@ -4,7 +4,7 @@
     var content = (ContentModels.StatCard)Model.Content;
 }
 
-<div>
+<div class="flex flex-col items-center p-[2rem] max-w-[370px]">
 
     <h1 class="font-semibold text-secondary text-[100px] text-center">@content.StatTitle</h1>
     <div class="rte">@Html.Raw(content.StatBody)</div>
