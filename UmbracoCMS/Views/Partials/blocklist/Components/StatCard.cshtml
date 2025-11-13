@@ -1,0 +1,12 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.StatCard)Model.Content;
+}
+
+<div>
+
+    <h1 class="font-semibold text-secondary text-[100px] text-center">@content.StatTitle</h1>
+    <div class="rte">@Html.Raw(content.StatBody)</div>
+
+</div>

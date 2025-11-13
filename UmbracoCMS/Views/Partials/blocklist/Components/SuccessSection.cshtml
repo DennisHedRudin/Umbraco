@@ -1,0 +1,33 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using UmbracoCMS.ViewModels
+@{
+    var content = (ContentModels.SuccessSection)Model.Content;
+
+    var statList = content.SuccessStat;
+}
+
+<section class="bg-main py-[4rem] bg-cover bg-no-repeat bg-center [background-image:url('/Images/Dotworld.svg')]"         >
+    <div class="max-w-7xl mx-auto flex flex-col gap-[4rem] items-center">
+
+        <div class="flex flex-col gap-[1.5rem] items-center">
+            <p>@content.SuccessLabel</p>
+            <h3>@content.SuccessTitle</h3>
+        </div>
+
+
+        <div class="flex gap-[3rem] justify-center">
+            @if (statList != null)
+            {
+                for (var i = 0; i < statList.Count; i++)
+                {
+                    var stat = statList[i];
+
+                    <partial name="Partials/Blocklist/Components/StatCard" model="stat" />
+                }
+            }
+        </div>
+    </div>
+    
+   
+</section>
