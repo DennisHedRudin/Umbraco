@@ -8,4 +8,4 @@ namespace UmbracoCMS.Services
         Task<EmailResult> SendQuestionEmailAsync(QuestionFormViewModel model);
         Task<EmailResult> SendSupportEmailAsync(SupportFormViewModel model);
     }
-}
+} 

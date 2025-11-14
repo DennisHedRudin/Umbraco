@@ -27,7 +27,7 @@ namespace UmbracoCMS.Services
 
                 Have a great day!
 
-                Kind Regards, Onatrix Team";
+                Kind Regards, Umbraco Team";
 
                 var htmlContent = $@"
                 <html>
@@ -36,7 +36,7 @@ namespace UmbracoCMS.Services
                         <p>Tank you for reaching out to us about <strong>{model.SelectedOption}</strong>.</p>
                         <p>We'll contact you on <strong>{model.Phone}</strong>.</p>
                         <br/>
-                        <p>Have a great day!<br/>Kind Regards, Onatrix Team</p>
+                        <p>Have a great day!<br/>Kind Regards, Umbraco Team</p>
                     </body>
                 </html>";
 
@@ -75,7 +75,7 @@ namespace UmbracoCMS.Services
 
                 Have a great day!
 
-                Kind Regards, Onatrix Team";
+                Kind Regards, Umbraco Team";
 
                 var htmlContent = $@"
                 <html>
@@ -84,7 +84,7 @@ namespace UmbracoCMS.Services
                         <p>Tank you for your question.</p>
                         <p>We'll contact you on soon..</p>
                         <br/>
-                        <p>Have a great day!<br/>Kind Regards, Onatrix Team</p>
+                        <p>Have a great day!<br/>Kind Regards, Umbraco Team</p>
                     </body>
                 </html>";
 
@@ -122,7 +122,7 @@ namespace UmbracoCMS.Services
 
                 Have a great day!
 
-                Kind Regards, Onatrix Team";
+                Kind Regards, Umbraco Team";
 
                 var htmlContent = $@"
                 <html>
@@ -131,7 +131,7 @@ namespace UmbracoCMS.Services
                         <p>Tank you for your question.</p>
                         <p>We'll contact you on soon..</p>
                         <br/>
-                        <p>Have a great day!<br/>Kind Regards, Onatrix Team</p>
+                        <p>Have a great day!<br/>Kind Regards, Umbraco Team</p>
                     </body>
                 </html>";
 
