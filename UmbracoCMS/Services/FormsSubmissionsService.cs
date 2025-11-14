@@ -3,11 +3,12 @@ using UmbracoCMS.ViewModels;
 
 namespace UmbracoCMS.Services;
 
-public class FormSubmissionService(IContentService contentService)
+public class FormSubmissionService(IContentService contentService, ICommunicationService communicationService)
 {
     private readonly IContentService _contentService = contentService;
+    private readonly ICommunicationService _communicationService = communicationService;
 
-    public bool SaveCallbackRequest (CallbackFormViewModel model)
+    public async Task<bool> SaveCallbackRequest (CallbackFormViewModel model)
     {
         try
         {
@@ -24,7 +25,11 @@ public class FormSubmissionService(IContentService contentService)
             request.SetValue("callbackRequestOption", model.SelectedOption);
 
             var saveResult = _contentService.Save(request);
-            return saveResult.Success;
+            if (!saveResult.Success) return false;
+
+            await _communicationService.SendCallbackEmailAsync(model);
+
+            return true;
         }
         catch (Exception ex)
         {
@@ -34,7 +39,7 @@ public class FormSubmissionService(IContentService contentService)
 
     }
 
-    public bool SaveQuestionRequest (QuestionFormViewModel model)
+    public async Task<bool> SaveQuestionRequest (QuestionFormViewModel model)
     {
        
 
@@ -50,10 +55,15 @@ public class FormSubmissionService(IContentService contentService)
             request.SetValue("questionRequestName", model.Name);
             request.SetValue("questionRequestEmail", model.QuestionEmail);
             request.SetValue("questionRequestQuestion", model.Question);
-           
+
 
             var saveResult = _contentService.Save(request);
-            return saveResult.Success;
+            if (!saveResult.Success) return false;
+            
+            await _communicationService.SendQuestionEmailAsync(model);
+
+            return true;
+
         }
         catch (Exception ex)
         {
@@ -61,7 +71,7 @@ public class FormSubmissionService(IContentService contentService)
         }
     }
 
-    public bool SaveSupportRequest(SupportFormViewModel model)
+    public async Task<bool> SaveSupportRequest(SupportFormViewModel model)
     {
 
 
@@ -75,11 +85,16 @@ public class FormSubmissionService(IContentService contentService)
             var request = _contentService.Create(requestName, container, "supportRequest");
             
             request.SetValue("supportRequestEmail", model.SupportEmail);
-            
+
 
 
             var saveResult = _contentService.Save(request);
-            return saveResult.Success;
+            if (!saveResult.Success) return false;
+
+            
+            await _communicationService.SendSupportEmailAsync(model);
+
+            return true;
         }
         catch (Exception ex)
         {
